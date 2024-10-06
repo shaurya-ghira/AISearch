@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .message {
+            background-color: #d4e8fb;
+            border-left: 6px solid #2196F3;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .message strong {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Message History</h1>
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message">
+                <strong>Request:</strong> {{ message }}
+            </div>
+        {% empty %}
+            <p>No messages found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
